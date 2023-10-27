@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VietCal</string>
+    <string name="tab_calculator">Máy Tính</string>
+    <string name="tab_extension">Tiện ích</string>
+
+    <string name="init_result_calculate">0</string>
+</resources>
