@@ -145,6 +145,7 @@ public class CalculatorFragment extends Fragment {
                                     gExpression,
                                     format.format(secondNum),
                                     format.format(results)));
+                            Log.e("Tag","Van chay ne");
                         }
                     }else if (button.getText().toString().equals("+/-")) {
                         if(checkCase() == 3) {
@@ -181,6 +182,7 @@ public class CalculatorFragment extends Fragment {
     }
 
     /** Method checkCase() is used to check possible cases before performing calculations **
+    * @ return = 0 when the screen is displayed: Math Error                                *
     * @ return = 1 when the screen is displayed: firstNum + expression + "\n" + secondNum  *
     * @ return = 2 when the screen is displayed: firstNum + expression + "\n"              *
     * @ return = 3 when the screen is displayed: firstNum                                  *
@@ -205,6 +207,8 @@ public class CalculatorFragment extends Fragment {
                 secondNum = 0.0;
                 return 2;
             }
+        }else if(showScreen.equals("Math Error")) {
+            return 0;
         }else {
             firstNum = Double.parseDouble(showScreen);
             return 3;
