@@ -2,6 +2,22 @@
     <string name="app_name">VietCal</string>
     <string name="tab_calculator">Máy Tính</string>
     <string name="tab_extension">Tiện ích</string>
+    <string name="btn_result">Kết Quả</string>
 
     <string name="init_result_calculate">0</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="item_currency_covert">Quy Đổi Tiền Tệ</string>
+    <string name="item_electricity_bill">Hoá Đơn Tiền Điện</string>
+    <string name="item_water_bill">Hoá Đơn Tiền Nước</string>
+    <string name="item_gross_to_net">Lương Gross -> Net</string>
+    <string name="item_net_to_gross">Lương Net -> Gross</string>
+    <string name="item_temperature_covert">Quy Đổi Nhiệt Độ</string>
+    <string name="item_speed_convert">Quy Đổi Tốc Độ</string>
+    <string name="item_bmi">Tính BMI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_height">Chiều Cao:</string>
+    <string name="tv_weight">Cân Nặng :</string>
 </resources>

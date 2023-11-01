@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".fragment.CalculateBmiFragment">
+
+    <TextView
+        android:id="@+id/tv_title_bmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_bmi"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_height"
+        android:layout_below="@id/tv_title_bmi"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/tv_height"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/et_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="15dp"
+            android:inputType="number"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/material_grey_600"
+            android:hint="Cm"
+            android:textColorHint="@color/material_grey_600"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_weight"
+        android:layout_below="@id/layout_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/tv_weight"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/material_grey_600"
+            android:hint="Kg"
+            android:textColorHint="@color/material_grey_600"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_result_bmi"
+        android:layout_below="@id/layout_weight"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:padding="5dp"
+            android:text="@string/btn_result"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_result_bmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_result"
+            android:layout_centerInParent="true"
+            android:text="BMI: 20.8"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+        <TextView
+            android:id="@+id/tv_classify_result_bmi"
+            android:layout_below="@id/tv_result_bmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Bình Thường"
+            android:textSize="35sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_analysis"
+        android:layout_below="@+id/layout_result_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/tv_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Phân Tích"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/tv_analysis_height"
+            android:layout_below="@+id/tv_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/tv_height"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/tv_analysis_weight"
+            android:layout_below="@+id/tv_analysis_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/tv_weight"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/btn_numpad_3"
+        android:padding="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn_result"
+        android:textSize="20sp"/>
+</RelativeLayout>
