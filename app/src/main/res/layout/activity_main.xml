@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="@color/black"
-    android:padding="20dp">
+    android:background="@color/black">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabTextColor="@color/material_grey_600"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextAppearance="@style/tabLayout_style"
-        app:tabIndicatorColor="@color/black"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.viewpager2.widget.ViewPager2>
-</LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/material_grey_600"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/tabLayout_style"
+            app:tabIndicatorColor="@color/black"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.viewpager2.widget.ViewPager2>
+    </LinearLayout>
+</FrameLayout>

@@ -1,14 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="15dp"
     tools:context=".fragment.SpeedConvertFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_title_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_speed_convert"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_km_per_hour"
+        android:layout_below="@+id/tv_title_speed"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_km_per_h"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_m_per_s"
+        android:layout_below="@+id/tv_km_per_hour"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_m_per_s"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_nautical_mile"
+        android:layout_below="@+id/tv_m_per_s"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_nautical_mile"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_km_per_h"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title_speed"
+        android:layout_alignEnd="@id/tv_km_per_hour"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@id/tv_km_per_hour"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/et_m_per_s"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_km_per_h"
+        android:layout_alignEnd="@id/tv_m_per_s"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@id/tv_m_per_s"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/et_nautical_mile"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_m_per_s"
+        android:layout_alignEnd="@id/tv_nautical_mile"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@id/tv_nautical_mile"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btn_calculate_speed"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/btn_numpad_3"
+        android:padding="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn_result"
+        android:textSize="20sp"/>
+</RelativeLayout>

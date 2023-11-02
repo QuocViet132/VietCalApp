@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExtensionFragment extends Fragment {
-    public static final String TAG = ExtensionFragment.class.getName();
     private RecyclerView rcvExtension;
     private View mView;
     private MainActivity mMainActivity;

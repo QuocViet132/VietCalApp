@@ -7,60 +7,77 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.vietcal.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SpeedConvertFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.text.DecimalFormat;
+
 public class SpeedConvertFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private View view;
+    private EditText etKmPerHour;
+    private EditText etMPerSecond;
+    private EditText etNauticalMilePerHour;
+    private Button btnCalculate;
+    private DecimalFormat decimalFormat = new DecimalFormat("0.######");
 
     public SpeedConvertFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SpeedConvertFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SpeedConvertFragment newInstance(String param1, String param2) {
-        SpeedConvertFragment fragment = new SpeedConvertFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_speed_convert, container, false);
+        view = inflater.inflate(R.layout.fragment_speed_convert, container, false);
+        etKmPerHour = view.findViewById(R.id.et_km_per_h);
+        etMPerSecond = view.findViewById(R.id.et_m_per_s);
+        etNauticalMilePerHour = view.findViewById(R.id.et_nautical_mile);
+        btnCalculate = view.findViewById(R.id.btn_calculate_speed);
+
+        clickListener();
+        return view;
+    }
+
+    private void clickListener() {
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            Double kmPerHour = 0.0;
+            Double mPerSecond = 0.0;
+            Double nauticalPerHour = 0.0;
+            @Override
+            public void onClick(View v) {
+                if(!etKmPerHour.getText().toString().isEmpty()) {
+                    kmPerHour = Double.parseDouble(etKmPerHour.getText().toString());
+                    mPerSecond = kmPerHour * (1/3.6);
+                    nauticalPerHour = kmPerHour / 1.852;
+
+                    etMPerSecond.setText(decimalFormat.format(mPerSecond));
+                    etNauticalMilePerHour.setText(decimalFormat.format(nauticalPerHour));
+                }else if(!etMPerSecond.getText().toString().isEmpty()) {
+                    mPerSecond = Double.parseDouble(etMPerSecond.getText().toString());
+                    kmPerHour = mPerSecond / (1/3.6);
+                    nauticalPerHour = kmPerHour / 1.852;
+
+                    etKmPerHour.setText(decimalFormat.format(kmPerHour));
+                    etNauticalMilePerHour.setText(decimalFormat.format(nauticalPerHour));
+                }else if(!etNauticalMilePerHour.getText().toString().isEmpty()) {
+                    nauticalPerHour = Double.parseDouble(etNauticalMilePerHour.getText().toString());
+                    kmPerHour = nauticalPerHour * 1.852;
+                    mPerSecond = kmPerHour * (1/3.6);
+
+                    etKmPerHour.setText(decimalFormat.format(kmPerHour));
+                    etMPerSecond.setText(decimalFormat.format(mPerSecond));
+                }else {
+                    Toast.makeText(view.getContext(),"Hãy nhập ít nhất 1 đơn vị để thực hiện quy đổi",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

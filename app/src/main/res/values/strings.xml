@@ -16,8 +16,14 @@
     <string name="item_speed_convert">Quy Đổi Tốc Độ</string>
     <string name="item_bmi">Tính BMI</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: fragment calculate bmi text -->
     <string name="tv_height">Chiều Cao:</string>
     <string name="tv_weight">Cân Nặng :</string>
+
+    <!-- TODO: fragment speed convert text -->
+    <string name="tv_km_per_h">Km/h</string>
+    <string name="tv_m_per_s">m/s</string>
+    <string name="tv_nautical_mile">Hải lí/h</string>
+    <string name="et_default_value">0</string>
+
 </resources>

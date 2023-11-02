@@ -56,9 +56,7 @@ public class CalculateBmiFragment extends Fragment {
                     classifyResultBmi(calculateBmi(mHeight,mWeight));
                     calculateBmiIdeal(mHeight);
                 }else {
-                    Toast.makeText(view.getContext(), "Nhap thong so chua du",Toast.LENGTH_SHORT).show();
-                    Log.e("etHeight",valueHeight);
-                    Log.e("etWeight",valueWeight);
+                    Toast.makeText(view.getContext(), "Hãy nhập đủ thông tin",Toast.LENGTH_SHORT).show();
                 }
             }
         });
