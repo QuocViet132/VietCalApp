@@ -21,6 +21,7 @@ public class SpeedConvertFragment extends Fragment {
     private EditText etMPerSecond;
     private EditText etNauticalMilePerHour;
     private Button btnCalculate;
+    private Button btnDelete;
     private DecimalFormat decimalFormat = new DecimalFormat("0.######");
 
     public SpeedConvertFragment() {
@@ -41,6 +42,7 @@ public class SpeedConvertFragment extends Fragment {
         etMPerSecond = view.findViewById(R.id.et_m_per_s);
         etNauticalMilePerHour = view.findViewById(R.id.et_nautical_mile);
         btnCalculate = view.findViewById(R.id.btn_calculate_speed);
+        btnDelete = view.findViewById(R.id.btn_delete_speed);
 
         clickListener();
         return view;
@@ -77,6 +79,14 @@ public class SpeedConvertFragment extends Fragment {
                 }else {
                     Toast.makeText(view.getContext(),"Hãy nhập ít nhất 1 đơn vị để thực hiện quy đổi",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etKmPerHour.setText("");
+                etMPerSecond.setText("");
+                etNauticalMilePerHour.setText("");
             }
         });
     }

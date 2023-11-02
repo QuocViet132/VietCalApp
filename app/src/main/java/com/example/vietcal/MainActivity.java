@@ -51,32 +51,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToExtensionActivity(Extension extension) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        switch (extension.getNameExtension()) {
-            case "Hoá Đơn Tiền Điện":
-                fragmentTransaction.add(R.id.layout_main_activity, new CalculateElectricityBillFragment()).commit();
-                break;
-            case "Hoá Đơn Tiền Nước":
-                fragmentTransaction.add(R.id.layout_main_activity, new CalculateWaterBillFragment()).commit();
-                break;
-            case "Lương Gross -> Net":
-                fragmentTransaction.add(R.id.layout_main_activity, new GrossToNetFragment()).commit();
-                break;
-            case "Lương Net -> Gross":
-                fragmentTransaction.add(R.id.layout_main_activity, new NetToGrossFragment()).commit();
-                break;
-            case "Quy Đổi Tiền Tệ":
-                fragmentTransaction.add(R.id.layout_main_activity, new CurrencyConvertFragment()).commit();
-                break;
-            case "Quy Đổi Nhiệt Độ":
-                fragmentTransaction.add(R.id.layout_main_activity, new TemperatureConvertFragment()).commit();
-                break;
-            case "Quy Đổi Tốc Độ":
-                fragmentTransaction.add(R.id.layout_main_activity, new SpeedConvertFragment()).commit();
-                break;
-            case "Tính BMI":
-                fragmentTransaction.add(R.id.layout_main_activity, new CalculateBmiFragment()).commit();
-                break;
-        }
+        Intent intent = new Intent(MainActivity.this, ExtensionActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("extension", extension);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

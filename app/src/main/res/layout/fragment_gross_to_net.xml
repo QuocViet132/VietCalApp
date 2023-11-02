@@ -5,5 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragment.GrossToNetFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_speed_convert"
+        android:textSize="30dp"
+        android:textColor="#4CAF50"/>
 
 </FrameLayout>

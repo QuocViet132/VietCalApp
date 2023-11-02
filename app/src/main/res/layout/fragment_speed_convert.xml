@@ -122,4 +122,18 @@
         android:layout_marginEnd="30dp"
         android:text="@string/btn_result"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btn_delete_speed"
+        android:layout_above="@id/btn_calculate_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/btn_numpad_3"
+        android:padding="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn_delete"
+        android:textSize="20sp"/>
 </RelativeLayout>

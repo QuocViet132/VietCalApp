@@ -3,6 +3,7 @@ package com.example.vietcal;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vietcal.fragment.CalculateBmiFragment;
+import com.example.vietcal.fragment.CalculateElectricityBillFragment;
+import com.example.vietcal.fragment.CalculateWaterBillFragment;
+import com.example.vietcal.fragment.CurrencyConvertFragment;
+import com.example.vietcal.fragment.GrossToNetFragment;
+import com.example.vietcal.fragment.NetToGrossFragment;
+import com.example.vietcal.fragment.SpeedConvertFragment;
+import com.example.vietcal.fragment.TemperatureConvertFragment;
 import com.example.vietcal.interfaces.IClickItemExtensionListener;
 import com.google.android.material.divider.MaterialDividerItemDecoration;
 
@@ -66,4 +75,5 @@ public class ExtensionFragment extends Fragment {
         listExtension.add(new Extension("Tính BMI", R.drawable.ic_bmi));
         return listExtension;
     }
+
 }

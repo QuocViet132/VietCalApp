@@ -3,6 +3,7 @@
     <string name="tab_calculator">Máy Tính</string>
     <string name="tab_extension">Tiện ích</string>
     <string name="btn_result">Kết Quả</string>
+    <string name="btn_delete">Xoá</string>
 
     <string name="init_result_calculate">0</string>
 
@@ -25,5 +26,10 @@
     <string name="tv_m_per_s">m/s</string>
     <string name="tv_nautical_mile">Hải lí/h</string>
     <string name="et_default_value">0</string>
+
+    <!-- TODO: fragment temperature convert text -->
+    <string name="tv_celsius">Độ C</string>
+    <string name="tv_kelvin">Độ K</string>
+    <string name="tv_fahrenheit">Độ F</string>
 
 </resources>
