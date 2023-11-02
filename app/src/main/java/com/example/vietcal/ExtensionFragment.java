@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vietcal.interfaces.IClickItemExtensionListener;
 import com.google.android.material.divider.MaterialDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExtensionFragment extends Fragment {
+    public static final String TAG = ExtensionFragment.class.getName();
     private RecyclerView rcvExtension;
     private View mView;
     private MainActivity mMainActivity;
@@ -39,7 +41,12 @@ public class ExtensionFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mMainActivity);
         rcvExtension.setLayoutManager(linearLayoutManager);
 
-        ExtensionAdapter extensionAdapter = new ExtensionAdapter(getListExtension());
+        ExtensionAdapter extensionAdapter = new ExtensionAdapter(getListExtension(), new IClickItemExtensionListener() {
+            @Override
+            public void onClickItemExtension(Extension extension) {
+                mMainActivity.goToExtensionActivity(extension);
+            }
+        });
         rcvExtension.setAdapter(extensionAdapter);
 
         RecyclerView.ItemDecoration itemDecoration = new MaterialDividerItemDecoration(mMainActivity, MaterialDividerItemDecoration.VERTICAL);

@@ -4,11 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.vietcal.R;
 
@@ -19,6 +22,7 @@ public class CalculateBmiFragment extends Fragment {
     private View view;
     private EditText etHeight;
     private EditText etWeight;
+    private Button btnCalculate;
     private double mHeight;
     private double mWeight;
     DecimalFormat decimalFormat = new DecimalFormat("0.#");
@@ -39,11 +43,25 @@ public class CalculateBmiFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_calculate_bmi, container, false);
         etHeight = view.findViewById(R.id.et_height);
         etWeight = view.findViewById(R.id.et_weight);
+        btnCalculate = view.findViewById(R.id.btn_calculate);
 
-        mHeight = Double.parseDouble(etHeight.getText().toString());
-        mWeight = Double.parseDouble(etWeight.getText().toString());
-        classifyResultBmi(calculateBmi(mHeight,mWeight));
-        classifyResultBmi(mHeight);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueHeight = etHeight.getText().toString();
+                String valueWeight = etWeight.getText().toString();
+                if(!valueHeight.isEmpty() && !valueWeight.isEmpty()) {
+                    mHeight = Double.parseDouble(etHeight.getText().toString());
+                    mWeight = Double.parseDouble(etWeight.getText().toString());
+                    classifyResultBmi(calculateBmi(mHeight,mWeight));
+                    calculateBmiIdeal(mHeight);
+                }else {
+                    Toast.makeText(view.getContext(), "Nhap thong so chua du",Toast.LENGTH_SHORT).show();
+                    Log.e("etHeight",valueHeight);
+                    Log.e("etWeight",valueWeight);
+                }
+            }
+        });
 
         return view;
     }
@@ -83,6 +101,6 @@ public class CalculateBmiFragment extends Fragment {
 
         tvAnalysis.setText("Phân Tích");
         tvAnalysisHeight.setText(MessageFormat.format("Chiều Cao (Cm): {0}", etHeight.getText().toString()));
-        tvAnalysisWeight.setText(MessageFormat.format("Cân Nặng Lý Tưởng (Kg): {0} - {1}", decimalFormat.format(lowerWeightIdeal), decimalFormat.format(upperWeightIdeal)));
+        tvAnalysisWeight.setText(MessageFormat.format("Cân Nặng Lý Tưởng (Kg):\n{0} - {1}", decimalFormat.format(lowerWeightIdeal), decimalFormat.format(upperWeightIdeal)));
     }
 }

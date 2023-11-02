@@ -1,8 +1,8 @@
 package com.example.vietcal;
 
-import android.graphics.drawable.Drawable;
+import java.io.Serializable;
 
-public class Extension {
+public class Extension implements Serializable {
     private String nameExtension;
     private int imageResource;
 
