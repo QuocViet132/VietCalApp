@@ -1,10 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
+    android:padding="15dp"
     tools:context=".fragment.CalculateElectricityBillFragment">
 
+    <TextView
+        android:id="@+id/tv_title_electricity_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_electricity_bill"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_start_number"
+        android:layout_below="@+id/tv_title_electricity_calculate"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_start_number"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_end_number"
+        android:layout_below="@+id/tv_start_number"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_end_number"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_total_number"
+        android:layout_below="@+id/tv_end_number"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_total_number"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_start_number"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title_electricity_calculate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/tv_start_number"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tv_kwh_start_number"
+        android:layout_below="@+id/tv_title_electricity_calculate"
+        android:layout_toEndOf="@+id/et_start_number"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_kwh"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_end_number"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_start_number"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/tv_end_number"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tv_kwh_end_number"
+        android:layout_below="@+id/tv_kwh_start_number"
+        android:layout_toEndOf="@+id/et_end_number"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_kwh"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_total_number"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_end_number"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@id/tv_total_number"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_default_value"
+        android:textColorHint="@color/material_grey_600"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/material_grey_600"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btn_calculate_electricity"
+        android:layout_toEndOf="@id/btn_delete_electricity"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        style="@style/btn_numpad_3"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn_result"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btn_delete_electricity"
+        android:layout_alignParentBottom="true"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        style="@style/btn_numpad_3"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btn_delete"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tv_title_total_amount"
+        android:layout_below="@id/tv_total_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/tv_title_total_amount"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_amount_before_tax"
+        android:layout_below="@id/tv_title_total_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tv_amount_total"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_amount_before_tax"
+        android:textSize="23sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_result_amount_before_tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title_total_amount"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:layout_toEndOf="@+id/tv_amount_before_tax"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tv_amount_tax"
+        android:layout_below="@id/tv_amount_before_tax"
+        android:layout_alignEnd="@+id/tv_amount_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_amount_tax"
+        android:textSize="23sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_result_amount_tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_result_amount_before_tax"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/tv_amount_tax"
+        android:gravity="end"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tv_amount_total"
+        android:layout_below="@id/tv_amount_tax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_amount_total"
+        android:textSize="23sp"
+        android:textColor="@color/material_deep_orange_500"/>
+
+    <TextView
+        android:id="@+id/tv_result_amount_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_result_amount_tax"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/tv_amount_total"
+        android:gravity="end"
+        android:textColor="@color/material_deep_orange_500"
+        android:textSize="23sp" />
+</RelativeLayout>

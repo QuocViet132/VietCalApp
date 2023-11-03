@@ -32,4 +32,14 @@
     <string name="tv_kelvin">Độ K</string>
     <string name="tv_fahrenheit">Độ F</string>
 
+    <!-- TODO: fragment electricity calculate text -->
+    <string name="tv_start_number">Số đầu</string>
+    <string name="tv_end_number">Số cuối</string>
+    <string name="tv_kwh">kWh</string>
+    <string name="tv_total_number">Tổng điện năng tiêu thụ</string>
+    <string name="tv_title_total_amount">* Thành tiền</string>
+    <string name="tv_amount_before_tax">Tiền trước thuế</string>
+    <string name="tv_amount_tax">Thuế GTGT (8%)</string>
+    <string name="tv_amount_total">Tổng cộng (VNĐ)</string>
+
 </resources>
