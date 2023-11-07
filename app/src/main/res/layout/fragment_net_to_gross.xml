@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_grey_600"
     tools:context=".fragment.NetToGrossFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tính năng đang phát triển"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal|center_vertical"
+        />
 
 </FrameLayout>

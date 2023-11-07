@@ -42,4 +42,22 @@
     <string name="tv_amount_tax">Thuế GTGT (8%)</string>
     <string name="tv_amount_total">Tổng cộng (VNĐ)</string>
 
+    <!-- TODO: fragment water calculate text -->
+    <string name="tv_m3">m3</string>
+    <string name="tv_total_number_m3">Số khối nước sử dụng</string>
+
+    <!-- TODO: fragment gross to net text -->
+    <string name="tv_salary_gross">Lương Gross</string>
+    <string name="tv_salary_net">Lương Net</string>
+    <string name="tv_currency_vn">VNĐ</string>
+    <string name="tv_dependent_person">Người phụ thuộc</string>
+    <string name="tv_local">Vùng</string>
+    <string name="tv_result_salary">Kết quả tính lương</string>
+    <string name="tv_gross_to_net">Gross -> Net</string>
+    <string-array name="index_local">
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+    </string-array>
 </resources>
