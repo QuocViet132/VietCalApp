@@ -1,7 +1,7 @@
 # VietCalApp
 An application used to perform simple calculations and provide calculation conveniences for Vietnamese people.
 
-<img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/CalculatorUI.png" alt="CalculatorUI" width="250" />   <img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/ExtensionsUI.png" alt="ExtensionsUI.png" width="250" />
+<img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/CalculatorUI.png" alt="CalculatorUI" width="250" /> "\t" <img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/ExtensionsUI.png" alt="ExtensionsUI.png" width="250" />
 
 <img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/ElectriccityBillUI.png" alt="ElectriccityBillUI" width="250" />   <img src="https://github.com/QuocViet132/VietCalApp/blob/develop/ImageUI/WaterBill.png" alt="WaterBill" width="250" />
 
