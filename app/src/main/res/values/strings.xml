@@ -60,4 +60,7 @@
         <item>III</item>
         <item>IV</item>
     </string-array>
+
+    <!-- TODO: fragment convert currency text -->
+    <string name="tv_currency_rates">Tỷ giá hiện tại</string>
 </resources>
