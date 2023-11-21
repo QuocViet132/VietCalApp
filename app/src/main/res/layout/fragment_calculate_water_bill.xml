@@ -53,9 +53,10 @@
 
     <EditText
         android:id="@+id/et_start_number"
-        android:layout_width="170dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title_water_calculate"
+        android:layout_toStartOf="@+id/tv_kwh_start_number"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_toEndOf="@id/tv_start_number"
@@ -71,7 +72,6 @@
     <TextView
         android:id="@+id/tv_kwh_start_number"
         android:layout_below="@+id/tv_title_water_calculate"
-        android:layout_toEndOf="@+id/et_start_number"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="30dp"
         android:layout_marginStart="15dp"
@@ -84,8 +84,9 @@
 
     <EditText
         android:id="@+id/et_end_number"
-        android:layout_width="170dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/tv_kwh_start_number"
         android:layout_below="@id/et_start_number"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@id/tv_end_number"
@@ -101,7 +102,6 @@
     <TextView
         android:id="@+id/tv_kwh_end_number"
         android:layout_below="@+id/tv_kwh_start_number"
-        android:layout_toEndOf="@+id/et_end_number"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:layout_marginStart="15dp"

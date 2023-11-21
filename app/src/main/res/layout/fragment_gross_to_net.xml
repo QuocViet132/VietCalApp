@@ -32,7 +32,8 @@
     <EditText
         android:id="@+id/et_salary_gross"
         android:layout_below="@id/tv_salary_gross"
-        android:layout_width="290dp"
+        android:layout_toStartOf="@+id/tv_currency"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:hint="@string/et_default_value"
@@ -42,19 +43,19 @@
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="@color/material_grey_600"/>
 
     <TextView
         android:id="@+id/tv_currency"
         android:layout_below="@id/tv_salary_gross"
-        android:layout_toEndOf="@id/et_salary_gross"
+        android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tv_currency_vn"
         android:textSize="25sp"
         android:textColor="@color/white"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"/>
 
     <TextView
